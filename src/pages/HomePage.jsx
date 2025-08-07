@@ -102,7 +102,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="p-6 max-w-3xl mx-auto bg-gray-50 min-h-screen">
+    <div className="p-6 max-w-3xl mx-auto bg-gray-100 min-h-screen rounded-2xl">
       <h1 className="text-4xl font-bold text-center text-gray-800 mb-10">Cloud Cost Estimator</h1>
 
       {resources.map((resource, idx) => (
