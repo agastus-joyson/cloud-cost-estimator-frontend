@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom'; 
 import axios from 'axios';
-import { Loader2, AlertTriangle } from 'lucide-react';
+import { Loader2, AlertTriangle, ArrowLeft } from 'lucide-react'; 
 import { Card, CardContent } from '../components/ui/card';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
 
@@ -9,6 +9,7 @@ const COLORS = ["#4F46E5", "#22C55E", "#E11D48", "#F59E0B", "#10B981"];
 
 export default function DetailsPage() {
   const { id } = useParams();
+  const navigate = useNavigate(); 
   const [details, setDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -38,6 +39,14 @@ export default function DetailsPage() {
 
   return (
     <div className="p-6 max-w-3xl mx-auto bg-gray-100 min-h-screen rounded-2xl">
+      <button
+        onClick={() => navigate('/history')}
+        className="mb-4 flex items-center text-blue-600 hover:underline"
+      >
+        <ArrowLeft className="w-5 h-5 mr-1" />
+        Back to History
+      </button>
+
       <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">Estimate Details</h1>
 
       <Card className="mb-6">
