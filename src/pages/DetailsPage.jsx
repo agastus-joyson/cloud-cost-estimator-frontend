@@ -51,7 +51,7 @@ export default function DetailsPage() {
 
       <Card className="mb-6">
         <CardContent>
-          <p><span className="font-semibold">Estimate ID:</span> {details.id}</p>
+          <p><span className="font-semibold">Estimate #</span>{details.id}</p>
           <p><span className="font-semibold">Timestamp:</span> {new Date(details.timestamp).toLocaleString()}</p>
           <p><span className="font-semibold">Total Cost:</span> ${details.totalCost.toFixed(2)}</p>
         </CardContent>
