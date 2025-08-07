@@ -9,7 +9,9 @@ export default function EstimateResult({ result }) {
       transition={{ duration: 0.5 }}
       className="mt-6 border-t pt-6"
     >
-      <h2 className="text-2xl font-semibold mb-4">Cost Estimate</h2>
+      <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6 border-b pb-2">
+        Cost Estimate
+      </h2>
       <div className="space-y-4">
         {result.breakdown.map((item, index) => (
           <Card key={index}>
@@ -24,8 +26,8 @@ export default function EstimateResult({ result }) {
             </CardContent>
           </Card>
         ))}
-        <div className="text-right text-xl font-bold">
-          Total: ${result.totalCost.toFixed(2)}
+        <div className="text-right text-2xl font-bold text-blue-700">
+            Total: ${result.totalCost.toFixed(2)}
         </div>
       </div>
     </motion.div>

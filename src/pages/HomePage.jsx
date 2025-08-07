@@ -102,8 +102,8 @@ export default function HomePage() {
   };
 
   return (
-    <div className="p-6 max-w-5xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Cloud Cost Estimator</h1>
+    <div className="p-6 max-w-3xl mx-auto bg-gray-50 min-h-screen">
+      <h1 className="text-4xl font-bold text-center text-gray-800 mb-10">Cloud Cost Estimator</h1>
 
       {resources.map((resource, idx) => (
         <ResourceRow
@@ -116,16 +116,19 @@ export default function HomePage() {
         />
       ))}
 
-      <div className="my-4">
+      <div className="my-4 flex justify-center">
         <Button onClick={handleAddResource} className="bg-green-600 hover:bg-green-700">
-          <PlusCircle className="mr-2 h-4 w-4" /> Add Another Resource
+            <PlusCircle className="mr-2 h-4 w-4" /> Add Another Resource
         </Button>
       </div>
 
-      <div className="mb-6">
-        <Button onClick={handleSubmit} disabled={submitting || resources.some(r => !r.type || !r.name || !r.region || !r.units)}>
-          {submitting ? <Loader2 className="animate-spin mr-2" /> : null}
-          Get Estimate
+      <div className="mb-6 flex justify-center">
+        <Button
+            onClick={handleSubmit}
+            disabled={submitting || resources.some(r => !r.type || !r.name || !r.region || !r.units)}
+        >
+            {submitting ? <Loader2 className="animate-spin mr-2" /> : null}
+        Get Estimate
         </Button>
       </div>
 

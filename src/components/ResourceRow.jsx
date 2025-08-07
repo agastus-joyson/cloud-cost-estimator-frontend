@@ -7,8 +7,8 @@ const resourceTypes = ['Compute', 'Storage', 'Database'];
 
 export default function ResourceRow({ index, resource, onChange, onRemove, canRemove }) {
   return (
-    <Card>
-      <CardContent className="space-y-4">
+    <Card className="bg-white border border-gray-200 shadow-sm mt-6">
+      <CardContent className="space-y-5">
         <div>
           <label className="block font-semibold mb-1">Resource Type</label>
           <select
@@ -74,11 +74,13 @@ export default function ResourceRow({ index, resource, onChange, onRemove, canRe
           />
         </div>
 
-        {canRemove && (
-          <Button onClick={() => onRemove(index)} className="bg-red-500 hover:bg-red-600">
-            <Trash2 className="mr-2 h-4 w-4" /> Remove Resource
-          </Button>
-        )}
+        <div className="flex justify-end">
+            {canRemove && (
+                <Button onClick={() => onRemove(index)} className="bg-red-600 hover:bg-red-700">
+                <Trash2 className="mr-2 h-4 w-4" /> Remove Resource
+                </Button>
+            )}
+        </div>
       </CardContent>
     </Card>
   );
