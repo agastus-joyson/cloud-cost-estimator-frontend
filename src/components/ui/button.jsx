@@ -1,4 +1,3 @@
-import React from 'react';
 import classNames from 'classnames';
 
 export const Button = ({ children, className, ...props }) => {
